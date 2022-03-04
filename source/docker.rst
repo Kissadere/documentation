@@ -1,17 +1,16 @@
-Using Docker with PufferPanel
+Utilizar Docker con Pufferpanel
 =============================
 
-First, install Docker on the node. Please follow Docker's installation instructions located at https://docs.docker.com/get-docker/. When using Ubuntu, do not install Docker using its snap package, as it will not have permission to write into `/var/lib/pufferpanel`. 
+Primero, deberás instalar Docker en el nodo donde se encuentre Pufferpanel. Refierte a la guía de instalación de Docker, ubicada en https://docs.docker.com/get-docker/. Para el caso específico de Ubuntu, no hagas la instalación mediante `snap`, puesto que no tendrá privilegios de escritura sobre `/var/lib/pufferpanel`.
 
-Next, add the docker group (if not there) and add pufferpanel as a user of this group.
+Por consiguiente, crea un grupo para docker (si es que no existe alguno) y adiciona a pufferpanel como un usuario de éste grupo.
 
 .. code::
 
    sudo groupadd --force --system docker
    sudo usermod -a -G docker pufferpanel
 
-Restart PufferPanel.
-
+Reinicia Pufferpanel
 .. code::
 
    systemctl restart pufferpanel
