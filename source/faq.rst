@@ -1,49 +1,50 @@
-Frequently Asked Questions
+Preguntas Frecuentes
 ==========================
 
 
-Q: Billing module?
+P: ¿Módulo de facturación?
 ^^^^^^^^^^^^^^^^^^
 
-The development team takes the stance that any user who wishes to make money off of selling servers should be using software which has paid support or a similar guarantee to get support if and when there are issues. We also believe that such users should also use a panel which has been through numerous security audits to protect both their own information and that of their customers.
-
-As such, we do not believe we are the best software for such a service. We do not over-sell ourselves and will not risk our own users for the sake of making money, or those that use our software in any form to make money.
-
-While a module may occur in the future, the current panel code is not suitable for supporting such a feature.
+Creemos que cualquiera que busque una remuneración mediante la renta de servidores, debería de hacer uso de software de pago con soporte especializado que garantice la seguridad y la satisfacción del usuario final, así mismo como hacer uso de software que ha sido duramente probado en auditorías de seguridad para proteger la información personal de los usuarios.
+De ésta forma, no creemos ser la mejor opción para el ofrecimiento de éste servicio.
+Es probable que en un futuro se desarrollen módulos de facturación para la renta de servidores, sin embargo; en el estado actual del proyecto, ésto aún no está soportado nativamente.
 
 
-Q: Where are my logs?
+P: ¿En dónde están mis logs?
 ^^^^^^^^^^^^^^^^^^^^^
 
-PufferPanel stores all of their logs in ``/var/log/pufferpanel``.
+PufferPanel almacena los logs en la siguiente ubicación ``/var/log/pufferpanel``.
 
 
-Q: Where are the servers located?
+P: ¿En dónde están los archivos de los servidores?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-PufferPanel stores all the servers in ``/var/lib/pufferpanel/servers``.
+PufferPanel almacena los datos de los servidores en la siguiente ubicación ``/var/lib/pufferpanel/servers``.
 
 
-Q: Can I migrate from v1 to v2?
+P: ¿Puedo migrar de la v1 hacia la v2?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this time, we do not have a migration path to v2. Due to the changing nature of v2, we do not want to have to deal with rewriting migrations if we have to make changes. Once v2 is more stable, we will have a migration tool to help move from v1 to v2.
+Actualmente no hay madera de poder migrar hacia la v2 debido a los grandes cambios realizados continuamente en ésta versión, lo cual; dificultaría en un principio la reescritura del sistema de migración. Sin embargo, en el momento que la v2 sea más estable, se desarrollarán herramientas capaces de poder migrar de la v1 a la v2 de manera sencilla.
 
-Q: How do I disable user registration?
+
+P: ¿Cómo deshabilito el registro público de usuarios?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Log into you PufferPanel installation with an admin account and navigate to the ``Settings`` page from the sidebar, there you'll find a checkbox ``Allow users to register themselves``, untick that and hit ``Save`` and the registration link will not be shown on the login page anymore and attempts to register for example using the API will now always fail.
+Inicia sesión en Pufferpanel con una cuenta administrativa y dirígete a la sección de ``ajustes`` en el panel lateral izquierdo, ahí encontrarás una opción marcada como ``Permitir registro de usuarios``, deberás desactivar ésta opción y ´´Guardar´´ los cambios.
+De ésta forma, el sistema de registro de usuarios quedará desactivado para el público.
 
-Q: How do I change the panel title?
+
+P: ¿Cómo modifico el título del panel web?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Log into you PufferPanel installation with an admin account and navigate to the ``Settings`` page from the sidebar, there you'll find a text field ``Company Name``, change that and hit ``Save`` and the panel title will be updated.
+Inicia sesión en Pufferpanel con una cuenta administrativa y dirígete a la sección de ``ajustes`` en el panel lateral izquierdo, ahí encontrarás un campo de texto llamado como ``Nombre de la compañía``, modificalo a tu gusto y da clic sobre el botón de ``Guardar`` para guardar los cambios.
 
-Q: How do I run a bot/are there templates for bots?
+
+P: ¿Cómo puedo alojar un bot, hay alguna plantilla para ello?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-PufferPanel works as an abstraction over the host OS so, it supports everything the host OS does.
+Pufferpanel trabaja de manera conjunta con el sistema operativo en el que se encuentre instalado, por lo tanto; soporta cualquer tipo de aplicación que sea compatible con el mismo sistema operativo.
+No existen plantillas específicas para bots, cada proyecto funciona de manera distinta y no hay una manera sencilla de poder cubrir todos éstos.
 
-Generic templates for "X" bot/bot library don't exist, each project works differently. There is no generic way to cover them.
-
-You'll need to create a template for them yourself, this is quite straight forward and there are plenty of  `example templates <https://github.com/PufferPanel/templates/>`_ to work from.
+Deberás crear una plantilla propia, puedes hacerlo referenciandote de las `plantillas de ejemplo <https://github.com/PufferPanel/templates/>`_.
