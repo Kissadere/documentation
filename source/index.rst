@@ -3,7 +3,7 @@ PufferPanel - Open Source Game Server Management
 
 .. toctree::
    :maxdepth: 1
-   :caption: Basics
+   :caption: Introducción
 
    installing
    installing-docker
@@ -13,7 +13,7 @@ PufferPanel - Open Source Game Server Management
 
 .. toctree::
    :maxdepth: 1
-   :caption: Guides
+   :caption: Guías
 
    guides/nginx
    guides/apache
@@ -27,14 +27,14 @@ PufferPanel - Open Source Game Server Management
 
 .. toctree::
    :maxdepth: 1
-   :caption: About
+   :caption: Acerca de
 
    about/about
    about/team
 
 .. toctree::
    :maxdepth: 1
-   :caption: Game specific guides
+   :caption: Guías específicas para juegos
 
    games/sourceds/autoupdate
    games/srcds/dependencies
@@ -42,7 +42,7 @@ PufferPanel - Open Source Game Server Management
 
 .. toctree::
    :maxdepth: 1
-   :caption: Release Notes
+   :caption: Notas de desarrollo
 
    release-notes/2.4.0
    release-notes/2.3.2
