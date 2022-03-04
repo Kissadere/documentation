@@ -1,13 +1,13 @@
-Installing PufferPanel using Docker
+Instalando Pufferpanel en Docker
 ===================================
 
-PufferPanel offers several images that include dependencies needed to run game servers. 
-We recommend using *latest* as it contains everything you will need to get servers runing quickly.
+Pufferpanel ofrece varias imágenes que incluyen las dependencias necesarias para la creación de servidores de juegos.
+Recomendamos hacer uso de la *última* versión de la imágen, pues contiene todo lo necesrio para crear servidores de manera rápida.
 
-Creating the container
+Creando un contenedor
 ----------------------
 
-To create the container, start it, and add the default user:
+Para crear un contenedor nuevo, inicialo y posteriormente crea un usuario por defecto:
 
 .. code-block::
 
@@ -17,57 +17,57 @@ To create the container, start it, and add the default user:
     docker start pufferpanel
     docker exec -it pufferpanel /pufferpanel/pufferpanel user add
     
-And you're done. Your panel is now accessible at http://localhost:8080
+¡Listo!. Puedes acceder al panel desde  http://localhost:8080
 
 
-Understanding the config
+
+Comprendiendo la configuración
 ------------------------
 
-With the usage of Docker, we move the configuration options to be environment variables. This means you don't have to override the config.json to apply changes.
-You can use the following to get all of the environment variables on the container.
+Al utilizar Docker, se han movido las opciones de configuración para hacerlos variables de entorno. Ésto significa que no tendrás que sobreescribir el archivo config.json para aplicar cambios. 
+Utiliza el siguiente comando para ver todas las variables de entorno del contenedor.
 
 .. code-block::
 
     docker inspect pufferpanel --format='{{range .Config.Env}}{{println .}}{{end}}'
 
 
-The variables follow the format of the JSON config, just using _ to handle children instead of {}.
+Las variables hacen uso del formato JSON de la configuración, utilizando _ para la administración de los apéndices (hijos) en lugar de {}.
 
 
-Tags
+Etiquetas
 ----
 
 pufferpanel/pufferpanel:latest
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This includes all the dependencies for game servers that we include in our templates.
-This is a combination of all below images.
-This is the best image for just getting the panel up and running with little effort.
+Incluye todas las dependencias para servidores de juegos que se incluyen en las plantillas por defecto.
+Es una combinación de las imágenes siguientes enlistadas.
+Ésta imágen es la recomendda para poder crear servidores de juego de manera fácil y rápida.
 
 
 pufferpanel/pufferpanel:java
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This includes both Java 8 and Java 16 from OpenJDK. This lets you handle both pre-1.17 and 1.17+ Minecraft: Java Edition servers. 
-Java 8 is accessible by using java8 as your Java command with javac8 for the compiler.
-Java 16 is accessible by using java16 as your Java command with javac16 for the compiler.
-Java 16 is the default JRE if java is used.
+Incluye Java 8 y 16. Permitiendo la instalación de servidores de Minecraft para versiones posteriores a 1.17 y versiones más recientes para Java Edition.
+Java 8 es accionado utilizando java8 como tu comando de inicialización de Java, con javac8 para el compilador.
+Java 16 es accionado utilizando java16 como tu comando de inicialización de Java, con javac16 para el compilador.
+Java 16 es la configuración por defecto de Java a ser utilizada.
 
 
 pufferpanel/pufferpanel:srcds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This includes all SRCDS dependencies for game servers such as CS:GO.
+Incluye todas las dependencias de SRCDS para servidores de Valve como CS:GO, TF2, etcétera.
 
 
 pufferpanel/pufferpanel:nodejs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This includes all NodeJS dependencies.
+Incluye todas las dependencias de NodeJS.
 
 
 pufferpanel/pufferpanel:base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is a no-dependency installation that only includes the panel. This is the recommended image for just running the panel
-or if you need to create a custom image.
+Únicamente incluye el panel, en caso de querer crear una imágen personalizada.
