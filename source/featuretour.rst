@@ -1,34 +1,34 @@
-Feature Tour
+Características
 ============
 
-All your servers in a single place
+Todos tus servidores en un solo lugar
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/featuretour/serverlist.png
 
-Create new servers in few simple steps
+Crea nuevos servidores fácilmente
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: images/featuretour/createserver1.png
 .. image:: images/featuretour/createserver2.png
 .. image:: images/featuretour/createserver3.png
 
-Simple but powerful graphical template editor
+Novedoso editor gráfico de plantillas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Build your own templates in no time and host anything you want
+Crea tus propias plantillas y comienza a crear servidores personalizados
 
 .. image:: images/featuretour/templateeditor.png
 
-Built to work wherever you are
+Diseñado para funcionar en cualquier lado
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
-   .. tab:: Desktop
+   .. tab:: Escritorio
 
       .. image:: images/featuretour/serverviewdesktop.png
 
-   .. tab:: Mobile/Tablet
+   .. tab:: Móvil
 
       .. image:: images/featuretour/serverviewmobile.png
