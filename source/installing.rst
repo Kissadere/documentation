@@ -1,51 +1,51 @@
-Installing PufferPanel
+Instalación de Pufferpanel
 ======================
 
 
-System Requirements
+Requerimientos del sistema
 -------------------
 
-* A VPS or Dedicated server (32-bit *IS NOT* supported)
-* SSH access and administrative (root or sudo) privileges on the server
-* One of the following operating systems:
+* Un VPS o Servidor Dedicado (Sistemas operativos de 32-Bits no están soportados)
+* Acceso root o privilegios de administrator (root o sudo)
+* Cualquiera de los siguientes sistemasa operativos:
 
 +-----------------------+-------+----------------+
-| OS/Version            | AMD64 | ARM            |
+| OS/Versión            | AMD64 | ARM            |
 +=======================+=======+================+
-| Centos 7              | Yes   | No             |
+| Centos 7              | Sí    | No             |
 +-----------------------+-------+----------------+
-| Centos 8              | Yes   | No             |
+| Centos 8              | Sí    | No             |
 +-----------------------+-------+----------------+
-| Fedora 33             | Yes   | No             |
+| Fedora 33             | Sí    | No             |
 +-----------------------+-------+----------------+
-| Ubuntu Bionic (18.04) | Yes   | No             |
+| Ubuntu Bionic (18.04) | Sí    | No             |
 +-----------------------+-------+----------------+
-| Ubuntu Cosmic (18.10) | Yes   | No             |
+| Ubuntu Cosmic (18.10) | Sí    | No             |
 +-----------------------+-------+----------------+
-| Ubuntu Disco (19.04)  | Yes   | No             |
+| Ubuntu Disco (19.04)  | Sí    | No             |
 +-----------------------+-------+----------------+
-| Ubuntu Eoan (19.10)   | Yes   | No             |
+| Ubuntu Eoan (19.10)   | Sí    | No             |
 +-----------------------+-------+----------------+
-| Ubuntu Focal (20.04)  | Yes   | ARM64 Only     |
+| Ubuntu Focal (20.04)  | Sí    | Sólo ARM64     |
 +-----------------------+-------+----------------+
-| Ubuntu Groovy (20.10) | Yes   | ARM64 Only     |
+| Ubuntu Groovy (20.10) | Sí    | Sólo ARM64     |
 +-----------------------+-------+----------------+
-| Debian Jessie (8)     | Yes   | No             |
+| Debian Jessie (8)     | Sí    | No             |
 +-----------------------+-------+----------------+
-| Debian Stretch (9)    | Yes   | No             |
+| Debian Stretch (9)    | Sí    | No             |
 +-----------------------+-------+----------------+
-| Debian Buster (10)    | Yes   | No             |
+| Debian Buster (10)    | Sí    | No             |
 +-----------------------+-------+----------------+
-| Debian Bullseye (11)  | Yes   | No             |
+| Debian Bullseye (11)  | Sí    | No             |
 +-----------------------+-------+----------------+
-| Raspbian Buster (10)  | No    | ARM64 & ARM32  |
+| Raspbian Buster (10)  | No    | ARM64 o ARM32  |
 +-----------------------+-------+----------------+
 
 
-Installing
+Instalación
 ----------
 
-For easiest installation, if you have one of the listed supported distributions, you con simply install our package and get going!
+Con el fin de simplificar la instalación, en caso de contar con alguno de los sistemas operativos enlistados; simplemente deberás instalar nuestro paquete.
 
 .. tabs::
 
@@ -69,42 +69,43 @@ For easiest installation, if you have one of the listed supported distributions,
          
    .. tab:: Docker
    
-      For Docker usage, please refer to :doc:`this page <installing-docker>`.
+      Para utilizar el sistema de Docker, dirígete hacia :doc:`ésta página <installing-docker>`.
 
 
-Unsupported OS/Version
+Otro sistema operativo
 ----------------------
 .. warn::
-   This is not recommended or supported. If it breaks, you're on your own!
+   No recomendamos la instalación en algún sistema operativo distinto a los establecidos, procede bajo tu propio riesgo.
    
-It is possible to install PufferPanel on other Debian or Red Hat based OS/Versions not listed in the table above.
-For a OS/Version that is not included in the table above, you will need to add :code:`os={os} dist={version}` with a os/version that is included in the repository, to the curl command between sudo and bash. i.e.
+Es posible instalar Pufferpanel en cualquier otro sistema operativo basado en Debian o Red Hat, incluso si no está en la lista de requerimientos.
+Para poder hacer la instalación en algún sistema operativo no incluído, deberás agregar tu sistema operativo y tu versión :code:`os={os} dist={version}` en el comando curl, entre sudo y bash, por ejemplo:
 
 .. code-block:: bash
          
    curl -s https://packagecloud.io/install/repositories/pufferpanel/pufferpanel/script.deb.sh | sudo os=ubuntu dist=focal bash
            
 
-Ports
+Puertos
 -----
 
-The following ports are used by PufferPanel. Please allow traffic to/from these ports to fully use your installation.
+Necesitarás hacer uso de los siguientes puertos para el correcto funcionamiento de Pufferpanel, recuerda permitir el tráfico entranda y saliente desde los siguientes puertos
 
-* 8080: Web access
+* 8080: Acceso Web
 * 5657: SFTP
 
 
-Adding an admin
+Crear usuario administrativo
 ---------------
 
-To create your first user, run the following command. Be sure to enter "Y" when it asks if this is an admin so you can fully use your panel.
+Para crear el primer usuario con privilegios de administrador en Pufferpanel, utiliza el siguiente comando.
+No olvides marcar la opción "Y" cuando el sistema te lo indique para poder otorgar privilegios de administración.
 
 .. code::
 
    $ sudo pufferpanel user add
 
 
-Starting the panel
+Inicializar Pufferpanel
 ------------------
 
 .. code::
@@ -112,17 +113,17 @@ Starting the panel
    $ sudo systemctl enable --now pufferpanel
 
 --------------------
-Managing the service
+Administración del servicio
 --------------------
 
-PufferPanel uses Systemd to manage the service, consult the man page `man systemctl` or `a guide <https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units>`_ for instructions on how to use it.
+Pufferpanel hace uso de systemd para administrar el servicio del mismo, consulta la págian de man `man systemctl` o dirígete `a aquí <https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units>`_ para obtener más información al respecto.
 
-Done!
+¡Listo!
 -----
 
-And that's it! Your panel is now available on port 8080 of your server.
+Has terminado la instalación de Pufferpanel, ahora podrás acceder a tu panel desde IP:8080 en tu navegador
 
 Additional resources:
 
-* :doc:`Enabling SSL <guides/ssl-setup-nginx>`
-* Using a database instead of file-backed storage (TODO)
+* :doc:`Habilitar SSL <guides/ssl-setup-nginx>`
+* :doc:`Cambiar motor de la base de datos <guides/database>`
